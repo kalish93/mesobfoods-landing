@@ -200,24 +200,15 @@ export default function HomePage() {
           <div className="max-w-4xl mx-auto">
             <div className="relative bg-card border border-border rounded-2xl p-4 sm:p-8 shadow-2xl">
               <div className="aspect-video bg-muted rounded-lg flex items-center justify-center relative overflow-hidden">
-                <video
+                <div
                   className="w-full h-full object-cover rounded-lg"
-                  controls
-                  poster="/mesobfoods-restaurant-self-order-app-preview.jpg"
-                  preload="metadata"
+                  
                 >
-                  <source src="/mesobfoods-demo-video.mp4" type="video/mp4" />
-                  <source src="/mesobfoods-demo-video.webm" type="video/webm" />
-                  {/* Fallback for browsers that don't support video */}
-                  <img
-                    src="/mesobfoods-restaurant-self-order-app-preview.jpg"
-                    alt="MesobFoods Demo - QR Code Restaurant Ordering System"
-                    className="w-full h-full object-cover rounded-lg"
-                  />
-                  <p className="text-muted-foreground">
-                    Your browser doesn't support video playback.
-                  </p>
-                </video>
+                  <iframe className="w-full h-full" src="https://www.youtube.com/embed/kLkU_PNj6CU?si=BJdgxfD6zGystoYH&amp;controls=0" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  frameBorder="0"
+                  referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                  
+                </div>
                 <div className="absolute top-4 right-4 bg-primary text-primary-foreground px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium">
                   Interactive Demo
                 </div>
