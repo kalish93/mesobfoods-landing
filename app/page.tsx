@@ -22,6 +22,7 @@ import { toast, Toaster } from "sonner";
 
 export default function HomePage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const scrollToSection = (sectionId: string) => {
     console.log("[v0] Attempting to scroll to section:", sectionId);
@@ -145,8 +146,11 @@ export default function HomePage() {
                 Revolutionary Self-Order Experience
               </Badge>
               <h1 className="text-3xl sm:text-4xl lg:text-6xl font-bold text-balance leading-tight">
-                Scan, Order, Enjoy –
-                <span className="text-primary"> No Waiters Needed</span>
+                Scan, Order, Enjoy
+                <span className="text-primary text-5xl block">
+                  {" "}
+                  No Waiters Needed
+                </span>
               </h1>
               <p className="text-lg sm:text-xl text-muted-foreground text-pretty max-w-2xl mx-auto">
                 Transform your restaurant experience with our seamless
@@ -199,29 +203,32 @@ export default function HomePage() {
           </div>
           <div className="max-w-4xl mx-auto">
             <div className="relative bg-card border border-border rounded-2xl p-4 sm:p-8 shadow-2xl">
-              <div className="aspect-video bg-muted rounded-lg flex items-center justify-center relative overflow-hidden">
+              <div className="bg-muted rounded-lg flex items-center justify-center relative overflow-hidden">
                 <video
-                  className="w-full h-full object-cover rounded-lg"
+                  className="max-h-[80vh] max-w-full rounded-lg"
+                  style={{ aspectRatio: "auto" }}
                   controls
-                  poster="/mesobfoods-restaurant-self-order-app-preview.jpg"
+                  poster="/preview.png"
                   preload="metadata"
                 >
-                  <source src="/mesobfoods-demo-video.mp4" type="video/mp4" />
+                  <source src="/demo-draft.mp4" type="video/mp4" />
                   <source src="/mesobfoods-demo-video.webm" type="video/webm" />
                   {/* Fallback for browsers that don't support video */}
                   <img
                     src="/mesobfoods-restaurant-self-order-app-preview.jpg"
                     alt="MesobFoods Demo - QR Code Restaurant Ordering System"
-                    className="w-full h-full object-cover rounded-lg"
+                    className="max-h-[80vh] max-w-full rounded-lg"
                   />
                   <p className="text-muted-foreground">
                     Your browser doesn't support video playback.
                   </p>
                 </video>
+
                 <div className="absolute top-4 right-4 bg-primary text-primary-foreground px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium">
                   Interactive Demo
                 </div>
               </div>
+
               <div className="mt-6 text-center">
                 <p className="text-muted-foreground text-sm sm:text-base">
                   Watch how customers can scan, browse, customize, and pay - all
@@ -548,6 +555,7 @@ export default function HomePage() {
                     className="space-y-4 lg:space-y-6"
                     onSubmit={async (e) => {
                       e.preventDefault();
+                      setIsSubmitting(true);
                       const form = e.currentTarget as HTMLFormElement;
                       const firstName = (
                         form.querySelector<HTMLInputElement>(
@@ -575,7 +583,7 @@ export default function HomePage() {
                       ).trim();
 
                       try {
-                        const response = await fetch("/api/contact", {
+                        const response = await fetch("https://contact-5wcrv0lfs-kaleab-tekaligns-projects.vercel.app/contact", {
                           method: "POST",
                           headers: {
                             "Content-Type": "application/json",
@@ -592,8 +600,10 @@ export default function HomePage() {
                         if (response.ok) {
                           toast.success("Message sent successfully!");
                           form.reset();
+                          setIsSubmitting(false);
                         } else {
                           toast.error("Failed to send message. Try again.");
+                          setIsSubmitting(false);
                         }
                       } catch (error) {
                         console.error("Error sending message:", error);
@@ -663,8 +673,8 @@ export default function HomePage() {
                         required
                       />
                     </div>
-                    <Button type="submit" className="w-full">
-                      Send Message
+                    <Button type="submit" className="w-full cursor-pointer" disabled={isSubmitting}>
+                      {isSubmitting ? "Sending..." : "Send Message"}
                     </Button>
                   </form>
                 </CardContent>
