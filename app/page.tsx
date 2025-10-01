@@ -379,18 +379,16 @@ export default function HomePage() {
                   ))}
                 </div>
                 <p className="text-muted-foreground">
-                  "MesobFoods transformed our restaurant operations. We've
-                  reduced wait times and increased table turnover by 50%. Our
-                  customers love the convenience!"
+                  "Switching to Mesob Foods has been a total game-changer for my coffee shop. It's incredibly easy for my team to manage, and the analytics feature allows us to track sales and performance accurately. Best of all, our customers constantly comment on how much they love the convenience of ordering and checking their status right from their table!"
                 </p>
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
-                    <span className="text-sm font-medium text-primary">SM</span>
+                    <span className="text-sm font-medium text-primary">FD</span>
                   </div>
                   <div>
-                    <p className="font-medium">Sarah Martinez</p>
+                    <p className="font-medium">Fikremariam Deme</p>
                     <p className="text-sm text-muted-foreground">
-                      Owner, Bella Vista Restaurant
+                      Owner, Fikre Bistro
                     </p>
                   </div>
                 </div>
@@ -407,18 +405,16 @@ export default function HomePage() {
                   ))}
                 </div>
                 <p className="text-muted-foreground">
-                  "As a customer, I love how easy it is to order. No more
-                  waiting for servers, and I can customize everything exactly
-                  how I want it."
+                  "What I love most about Mesob Foods is the sheer convenience. I can order, call a waiter, and request the bill right from my phone, all without the hassle of downloading a separate app or logging in. It’s a truly frictionless experience that lets me do so much with little to no effort."
                 </p>
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
-                    <span className="text-sm font-medium text-primary">MJ</span>
+                    <span className="text-sm font-medium text-primary">EB</span>
                   </div>
                   <div>
-                    <p className="font-medium">Michael Johnson</p>
+                    <p className="font-medium">Estifanos Bireda</p>
                     <p className="text-sm text-muted-foreground">
-                      Regular Customer
+                      Beloved Customer
                     </p>
                   </div>
                 </div>
@@ -435,18 +431,16 @@ export default function HomePage() {
                   ))}
                 </div>
                 <p className="text-muted-foreground">
-                  "The analytics and insights we get from MesobFoods help us
-                  optimize our menu and improve profitability. It's a
-                  game-changer."
+                  "Using Mesob Foods has completely streamlined my daily workflow. I no longer have to juggle a dozen mental notes—managing orders is simple and efficient. The best part? Customers can check their order progress instantly, which dramatically cuts down on frustration. Thank you for making my job so much easier and more enjoyable!"
                 </p>
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
-                    <span className="text-sm font-medium text-primary">DL</span>
+                    <span className="text-sm font-medium text-primary">AM</span>
                   </div>
                   <div>
-                    <p className="font-medium">David Lee</p>
+                    <p className="font-medium">Amanuel Mulu</p>
                     <p className="text-sm text-muted-foreground">
-                      Manager, Urban Eats
+                      Waiter, Fikre Bistro
                     </p>
                   </div>
                 </div>
